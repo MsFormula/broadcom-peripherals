@@ -33,6 +33,7 @@
                     <name>GPFSEL0</name>
                     <description>GPIO Function Select 0</description>
                     <addressOffset>0x00</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {% macro fsel_fields(pin_offset, pin_count=10) -%}
                     <fields>
                         {% for i in range(0, pin_count) %}
@@ -79,30 +80,35 @@
                     <name>GPFSEL1</name>
                     <description>GPIO Function Select 1</description>
                     <addressOffset>0x04</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {{ fsel_fields(10) }}
                 </register>
                 <register>
                     <name>GPFSEL2</name>
                     <description>GPIO Function Select 2</description>
                     <addressOffset>0x08</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {{ fsel_fields(20) }}
                 </register>
                 <register>
                     <name>GPFSEL3</name>
                     <description>GPIO Function Select 3</description>
                     <addressOffset>0x0c</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {{ fsel_fields(30) }}
                 </register>
                 <register>
                     <name>GPFSEL4</name>
                     <description>GPIO Function Select 4</description>
                     <addressOffset>0x10</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {{ fsel_fields(40) }}
                 </register>
                 <register>
                     <name>GPFSEL5</name>
                     <description>GPIO Function Select 5</description>
                     <addressOffset>0x14</addressOffset>
+                    <resetValue>0x00000000</resetValue>
                     {{ fsel_fields(50, (altfunc | length - 50)) }}
                 </register>
                 <register>
@@ -111,6 +117,7 @@
                     <addressOffset>0x1c</addressOffset>
                     <access>write-only</access>
                     <modifiedWriteValues>oneToSet</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -128,6 +135,7 @@
                     <addressOffset>0x20</addressOffset>
                     <access>write-only</access>
                     <modifiedWriteValues>oneToSet</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -145,6 +153,7 @@
                     <addressOffset>0x28</addressOffset>
                     <access>write-only</access>
                     <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -162,6 +171,7 @@
                     <addressOffset>0x2c</addressOffset>
                     <access>write-only</access>
                     <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -178,6 +188,7 @@
                     <description>GPIO Pin Level 0</description>
                     <addressOffset>0x34</addressOffset>
                     <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -194,6 +205,7 @@
                     <description>GPIO Pin Level 1</description>
                     <addressOffset>0x38</addressOffset>
                     <access>read-only</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -212,6 +224,7 @@
                     <addressOffset>0x40</addressOffset>
                     <access>read-write</access>
                     <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -229,6 +242,7 @@
                     <addressOffset>0x44</addressOffset>
                     <access>read-write</access>
                     <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -245,6 +259,7 @@
                     <description>GPIO Pin Rising Edge Detect Enable 0</description>
                     <addressOffset>0x4c</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -261,6 +276,7 @@
                     <description>GPIO Pin Rising Edge Detect Enable 1</description>
                     <addressOffset>0x50</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -277,6 +293,7 @@
                     <description>GPIO Pin Falling Edge Detect Enable 0</description>
                     <addressOffset>0x58</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -294,6 +311,7 @@
                     <description>GPIO Pin Falling Edge Detect Enable 1</description>
                     <addressOffset>0x5c</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -310,6 +328,7 @@
                     <description>GPIO Pin High Detect Enable 0</description>
                     <addressOffset>0x64</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -326,6 +345,7 @@
                     <description>GPIO Pin High Detect Enable 1</description>
                     <addressOffset>0x68</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -342,6 +362,7 @@
                     <description>GPIO Pin Low Detect Enable 0</description>
                     <addressOffset>0x70</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -359,6 +380,7 @@
                     <description>GPIO Pin Low Detect Enable 1</description>
                     <addressOffset>0x74</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -375,6 +397,7 @@
                     <description>GPIO Pin Async. Rising Edge Detect 0</description>
                     <addressOffset>0x7c</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -391,6 +414,7 @@
                     <description>GPIO Pin Async. Rising Edge Detect 1</description>
                     <addressOffset>0x80</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -407,6 +431,7 @@
                     <description>GPIO Pin Async. Falling Edge Detect 0</description>
                     <addressOffset>0x88</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -423,6 +448,7 @@
                     <description>GPIO Pin Async. Falling Edge Detect 1</description>
                     <addressOffset>0x8c</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
@@ -465,6 +491,7 @@
                     <description>GPIO Pin Pull-up/down Enable</description>
                     <addressOffset>0x94</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>PUD</name>
@@ -499,6 +526,7 @@
                     <description>GPIO Pin Pull-up/down Enable Clock 0</description>
                     <addressOffset>0x98</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, 32) %}
                         <field>
@@ -515,6 +543,7 @@
                     <description>GPIO Pin Pull-up/down Enable Clock 1</description>
                     <addressOffset>0x9c</addressOffset>
                     <access>read-write</access>
+                    <resetValue>0x00000000</resetValue>
                     <fields>
                         {% for i in range(0, (altfunc | length - 32)) %}
                         <field>
