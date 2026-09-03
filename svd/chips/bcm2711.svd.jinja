@@ -81,5 +81,8 @@
 
         {%- import "peripherals/bcm2711_dma.svd.jinja" as dma %}
         {{ dma.peripheral(peripheral_base + 0x7000)}}
+
+        {%- import "peripherals/pcm.svd.jinja" as pcm %}
+        {{ pcm.peripheral(peripheral_base + 0x203000, true)}}
     </peripherals>
 </device>
