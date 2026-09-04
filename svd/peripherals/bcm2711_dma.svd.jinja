@@ -160,7 +160,7 @@
             <register>
                 <name>{{ idx }}_DEBUG</name>
                 <description>DMA4 Debug register</description>
-                <addressOffset>{{ "0x%x" | format(idx * 256 + 32) }}</addressOffset>
+                <addressOffset>{{ "0x%x" | format(idx * 256 + 12) }}</addressOffset>
                 <resetValue>0x10000400</resetValue>
                 <fields>
                     <field>
@@ -1015,7 +1015,7 @@
                 <register>
                     <name>{{ idx }}_DEBUG</name>
                     <description>DMA4 Debug register</description>
-                    <addressOffset>{{ "0x%x" | format(idx * 256 + 12) }}</addressOffset>
+                    <addressOffset>{{ "0x%x" | format(idx * 256 + 32) }}</addressOffset>
                     <resetValue>0x14000000</resetValue>
                     <fields>
                         <field>
