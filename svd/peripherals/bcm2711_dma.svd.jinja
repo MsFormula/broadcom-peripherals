@@ -11,7 +11,7 @@
     <registers>
         {% macro dma_channel(idx) %}
         {% if (10 < idx) %} <register>
-            <name>{{ idx }}_CS</name>
+            <name>CS_{{ idx }}</name>
             <description>DMA4 Control and Status register contains the main control and status bits for this DMA4
                 channel</description>
             <addressOffset>{{ "0x%x" | format(idx * 256) }}</addressOffset>
@@ -143,7 +143,7 @@
             </fields>
             </register>
             <register>
-                <name>{{ idx }}_CB</name>
+                <name>CB_{{ idx }}</name>
                 <description>DMA4 Control Block Address register</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 4) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -158,7 +158,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_DEBUG</name>
+                <name>DEBUG_{{ idx }}</name>
                 <description>DMA4 Debug register</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 12) }}</addressOffset>
                 <resetValue>0x10000400</resetValue>
@@ -258,7 +258,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_TI</name>
+                <name>TI_{{ idx }}</name>
                 <description>DMA4 Transfer Information</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 16) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -329,7 +329,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_SRC</name>
+                <name>SRC_{{ idx }}</name>
                 <description>Lower 32 bits of the DMA4 Source Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 20) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -344,7 +344,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_SRCI</name>
+                <name>SRCI_{{ idx }}</name>
                 <description>DMA4 Source Information</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 24) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -394,7 +394,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_DEST</name>
+                <name>DEST_{{ idx }}</name>
                 <description>Lower 32 bits of the DMA4 Destination Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 28) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -409,7 +409,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_DESTI</name>
+                <name>DESTI_{{ idx }}</name>
                 <description>DMA4 Destination Information</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 32) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -459,7 +459,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_LEN</name>
+                <name>LEN_{{ idx }}</name>
                 <description>DMA4 Transfer Length</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 36) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -483,7 +483,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_NEXT_CB</name>
+                <name>NEXT_CB_{{ idx }}</name>
                 <description>DMA4 Next Control Block Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 40) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -498,7 +498,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_DEBUG2</name>
+                <name>DEBUG2_{{ idx }}</name>
                 <description>DMA4 Debug2 register</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 44) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -521,7 +521,7 @@
             </register>
             {% else %}
             <register>
-                <name>{{ idx }}_CS</name>
+                <name>CS_{{ idx }}</name>
                 <description>DMA Control and Status register contains the main control and status bits for this DMA
                     channel</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256) }}</addressOffset>
@@ -632,7 +632,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_CONBLK_AD</name>
+                <name>CONBLK_AD_{{ idx }}</name>
                 <description>DMA Control Block Address register</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 4) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -647,7 +647,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_SOURCE_AD</name>
+                <name>SOURCE_AD_{{ idx }}</name>
                 <description>DMA Source Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 12) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -662,7 +662,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_DEST_AD</name>
+                <name>DEST_AD_{{ idx }}</name>
                 <description>DMA Destination Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 16) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -677,7 +677,7 @@
                 </fields>
             </register>
             <register>
-                <name>{{ idx }}_NEXTCONBK</name>
+                <name>NEXTCONBK_{{ idx }}</name>
                 <description>DMA Next Control Block Address</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 28) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -692,7 +692,7 @@
                 </fields>
             </register>
             {% if (idx < 7) %} <register>
-                <name>{{ idx }}_TI</name>
+                <name>TI_{{ idx }}</name>
                 <description>DMA Transfer Information</description>
                 <addressOffset>{{ "0x%x" | format(idx * 256 + 8) }}</addressOffset>
                 <resetValue>0x00000000</resetValue>
@@ -798,7 +798,7 @@
                 </fields>
                 </register>
                 <register>
-                    <name>{{ idx }}_TXFR_LEN</name>
+                    <name>TXFR_LEN_{{ idx }}</name>
                     <description>DMA Transfer Length</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 20) }}</addressOffset>
                     <resetValue>0x00000000</resetValue>
@@ -823,7 +823,7 @@
                     </fields>
                 </register>
                 <register>
-                    <name>{{ idx }}_STRIDE</name>
+                    <name>STRIDE_{{ idx }}</name>
                     <description>DMA 2D Stride</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 24) }}</addressOffset>
                     <resetValue>0x00000000</resetValue>
@@ -845,7 +845,7 @@
                     </fields>
                 </register>
                 <register>
-                    <name>{{ idx }}_DEBUG</name>
+                    <name>DEBUG_{{ idx }}</name>
                     <description>DMA4 Debug register</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 32) }}</addressOffset>
                     <resetValue>0x04000000</resetValue>
@@ -913,7 +913,7 @@
                 </register>
                 {% else %}
                 <register>
-                    <name>{{ idx }}_TI</name>
+                    <name>TI_{{ idx }}</name>
                     <description>DMA Lite Transfer Information</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 8) }}</addressOffset>
                     <resetValue>0x00000000</resetValue>
@@ -998,7 +998,7 @@
                     </fields>
                 </register>
                 <register>
-                    <name>{{ idx }}_TXFR_LEN</name>
+                    <name>TXFR_LEN_{{ idx }}</name>
                     <description>DMA Lite Transfer Length</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 20) }}</addressOffset>
                     <resetValue>0x00000000</resetValue>
@@ -1013,7 +1013,7 @@
                     </fields>
                 </register>
                 <register>
-                    <name>{{ idx }}_DEBUG</name>
+                    <name>DEBUG_{{ idx }}</name>
                     <description>DMA4 Debug register</description>
                     <addressOffset>{{ "0x%x" | format(idx * 256 + 32) }}</addressOffset>
                     <resetValue>0x14000000</resetValue>
