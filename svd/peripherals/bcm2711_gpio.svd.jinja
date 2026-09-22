@@ -527,25 +527,7 @@
                             <bitOffset>{{ 2 * i }}</bitOffset>
                             <bitWidth>2</bitWidth>
                             <enumeratedValues>
-                                <name>BP_PULL</name>
-                                <usage>read-write</usage>
-                                <headerEnumName>BP_PULL</headerEnumName>
-                                <enumeratedValue>
-                                    <name>NONE</name>
-                                    <description>No pull</description>
-                                    <value>0</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>UP</name>
-                                    <description>Pull up</description>
-                                    <value>1</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>DOWN</name>
-                                    <description>Pull down</description>
-                                    <value>2</value>
-                                </enumeratedValue>
-                            </enumeratedValues>
+                                </enumeratedValues>
                         </field>
                         {% endfor %}
                     </fields>
@@ -555,7 +537,6 @@
                     <description>GPIO Pull-up / Pull-down Register 1</description>
                     <addressOffset>0xe8</addressOffset>
                     <resetValue>0x00000000</resetValue>
-                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, 16) %}
                         <field>
@@ -564,9 +545,6 @@
                             <bitOffset>{{ 2 * i }}</bitOffset>
                             <bitWidth>2</bitWidth>
                             <enumeratedValues>
-                                <name>BP_PULL</name>
-                                <usage>read-write</usage>
-                                <headerEnumName>BP_PULL</headerEnumName>
                                 <enumeratedValue>
                                     <name>NONE</name>
                                     <description>No pull</description>
@@ -592,7 +570,6 @@
                     <description>GPIO Pull-up / Pull-down Register 2</description>
                     <addressOffset>0xec</addressOffset>
                     <resetValue>0x00000000</resetValue>
-                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, 16) %}
                         <field>
@@ -601,9 +578,6 @@
                             <bitOffset>{{ 2 * i }}</bitOffset>
                             <bitWidth>2</bitWidth>
                             <enumeratedValues>
-                                <name>BP_PULL</name>
-                                <usage>read-write</usage>
-                                <headerEnumName>BP_PULL</headerEnumName>
                                 <enumeratedValue>
                                     <name>NONE</name>
                                     <description>No pull</description>
@@ -629,7 +603,6 @@
                     <description>GPIO Pull-up / Pull-down Register 3</description>
                     <addressOffset>0xf0</addressOffset>
                     <resetValue>0x00000000</resetValue>
-                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, (altfunc | length - 48)) %}
                         <field>
@@ -638,9 +611,6 @@
                             <bitOffset>{{ 2 * i }}</bitOffset>
                             <bitWidth>2</bitWidth>
                             <enumeratedValues>
-                                <name>BP_PULL</name>
-                                <usage>read-write</usage>
-                                <headerEnumName>BP_PULL</headerEnumName>
                                 <enumeratedValue>
                                     <name>NONE</name>
                                     <description>No pull</description>
