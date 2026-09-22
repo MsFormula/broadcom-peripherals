@@ -555,6 +555,7 @@
                     <description>GPIO Pull-up / Pull-down Register 1</description>
                     <addressOffset>0xe8</addressOffset>
                     <resetValue>0x00000000</resetValue>
+                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, 16) %}
                         <field>
@@ -591,6 +592,7 @@
                     <description>GPIO Pull-up / Pull-down Register 2</description>
                     <addressOffset>0xec</addressOffset>
                     <resetValue>0x00000000</resetValue>
+                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, 16) %}
                         <field>
@@ -627,6 +629,7 @@
                     <description>GPIO Pull-up / Pull-down Register 3</description>
                     <addressOffset>0xf0</addressOffset>
                     <resetValue>0x00000000</resetValue>
+                    <access>read-write</access>
                     <fields>
                         {% for i in range(0, (altfunc | length - 48)) %}
                         <field>
