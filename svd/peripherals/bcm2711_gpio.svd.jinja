@@ -527,7 +527,22 @@
                             <bitOffset>{{ 2 * i }}</bitOffset>
                             <bitWidth>2</bitWidth>
                             <enumeratedValues>
-                                </enumeratedValues>
+                                <enumeratedValue>
+                                    <name>NONE</name>
+                                    <description>No pull</description>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>UP</name>
+                                    <description>Pull up</description>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>DOWN</name>
+                                    <description>Pull down</description>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         {% endfor %}
                     </fields>
